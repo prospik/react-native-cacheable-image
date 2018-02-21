@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Image, ActivityIndicator, NetInfo, Platform } from 'react-native';
 import RNFS, { DocumentDirectoryPath } from 'react-native-fs';
@@ -7,8 +7,7 @@ import ResponsiveImage from 'react-native-responsive-image';
 const SHA1 = require("crypto-js/sha1");
 const URL = require('url-parse');
 
-export default
-class CacheableImage extends React.Component {
+class CacheableImage extends Component {
 
     constructor(props) {
         super(props)
@@ -312,3 +311,5 @@ CacheableImage.defaultProps = {
     networkAvailable: false,
     downloadInBackground: (Platform.OS === 'ios') ? false : true
 };
+
+export default CacheableImage;
